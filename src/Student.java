@@ -1,26 +1,44 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Student {
-    int rating;
-    int TEST;
-    int TEST2;
     private String name;
+    private int rating;
+    private static List<Student> studentList = new ArrayList<>();
 
-    // TODO implement Student class according to the instructions provided in the README.md file
+    // Конструктор за замовчуванням
+    public Student() {
+        this.name = "Unknown";
+        this.rating = 0;
+    }
 
+    // Конструктор з параметрами
     public Student(String name) {
-        //TODO initialize name
+        this.name = name;
+        this.rating = 0;
+        studentList.add(this);
     }
 
+    // Метод для отримання середнього рейтингу
     public static double getAvgRating() {
-        // TODO return average rating of all students
-        return 0;
+        if (studentList.isEmpty()) {
+            return 0.0;
+        }
+
+        double totalRating = 0.0;
+        for (Student student : studentList) {
+            totalRating += student.getRating();
+        }
+        return totalRating / studentList.size();
     }
 
+    // Геттери і сеттери
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
-        // TODO set student's name
+        this.name = name;
     }
 
     public int getRating() {
@@ -28,25 +46,27 @@ public class Student {
     }
 
     public void setRating(int rating) {
-        // TODO initialize rating;
+        this.rating = rating;
     }
 
+    // Метод для визначення кращого студента
     public boolean betterStudent(Student student) {
-        // TODO return the result of comparing this.student's rating with the student's rating
-        return false;
+        return this.rating > student.getRating();
     }
 
+    // Метод для зміни рейтингу
     public void changeRating(int rating) {
-        // TODO change this student's rating and average rating of all students
+        this.rating = rating;
     }
 
+    // Метод для видалення студента
     public static void removeStudent(Student student) {
-        // TODO remove student
+        studentList.remove(student);
     }
 
+    // Метод для виводу інформації про студента
     @Override
     public String toString() {
-        // TODO return String with name and rating of this student
-        return "";
+        return "Student{name='" + name + "', rating=" + rating + "}";
     }
 }
