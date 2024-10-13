@@ -1,5 +1,6 @@
 public class Student {
     int rating;
+    int TEST;
     private String name;
 
     // TODO implement Student class according to the instructions provided in the README.md file
