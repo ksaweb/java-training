@@ -1,6 +1,8 @@
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
+
 import static org.testng.Assert.assertEquals;
 
 public class ArraysTest {
@@ -22,15 +24,27 @@ public class ArraysTest {
                         new String[]{"here", "is", "some", "text", ".", "text"},
                         new String[]{"some", "text", "above", "."},
                         new String[]{"some", "text", "."}
+                },
+                {
+                        new String[]{"Basketball", "Football", "Running", "Cycling"},
+                        new String[]{"Cycling", "Football", "Hiking"},
+                        new String[]{"Football", "Cycling"}
+                },
+                {
+                        new String[]{"Ukraine", "Japan", "China"},
+                        new String[]{"China", "Japan", "Canada"},
+                        new String[]{"Japan", "China"}
                 }
-                // TODO add 2 more test data here
         };
     }
 
     @Test(dataProvider = "ArrayUtil")
     public void testFindCommon(String[] array1, String[] array2, String[] expectedResult) {
+        String[] result = ArrayUtil.findCommon(array1, array2);
 
-        assertEquals(ArrayUtil.findCommon(array1, array2), expectedResult,
-                "Common elements are not correct");
+        Arrays.sort(result);
+        Arrays.sort(expectedResult);
+
+        assertEquals(result, expectedResult, "Common elements are not correct");
     }
 }
