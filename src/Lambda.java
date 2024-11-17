@@ -10,7 +10,7 @@ public class Lambda {
      */
     public static BiFunction<Double, Double, Double> getMax() {
         // TODO replace null with lambda expression
-        return null;
+        return (a, b) -> a > b ? a : b;
     }
 
     /**
@@ -20,6 +20,6 @@ public class Lambda {
      */
     public static Function<Double, Double> getSqrt() {
         // TODO replace null with method reference
-        return null;
+        return Math::sqrt;
     }
 }
