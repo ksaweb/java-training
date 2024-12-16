@@ -1,5 +1,7 @@
 package com.example.selenium.steps;
 
+import com.example.selenium.pages.LoginPage;
+import com.example.selenium.pages.MainPage;
 import org.openqa.selenium.WebDriver;
 
 public class UserSteps {
@@ -9,15 +11,17 @@ public class UserSteps {
         this.driver = driver;
     }
 
-    public com.example.selenium.steps.UserSteps login(String username, String password) {
-        // TODO initialize LoginPage, call setUsername, setPassword, and click login methods
-
-        //  TODO assert title
+    public UserSteps login(String username, String password) {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.setUsername(username)
+                .setPassword(password)
+                .clickLogin();
         return this;
     }
 
     public UserSteps logout() {
-        // TODO call logout method
+        MainPage mainPage = new MainPage(driver);
+        mainPage.clickLogout();
         return this;
     }
 }

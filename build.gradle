@@ -15,9 +15,11 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.seleniumhq.selenium:selenium-java:4.26.0'
-    implementation 'org.seleniumhq.selenium:selenium-chrome-driver:4.26.0'
-    implementation 'org.seleniumhq.selenium:selenium-remote-driver:4.26.0'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.27.0'
+    implementation 'org.seleniumhq.selenium:selenium-chrome-driver:4.27.0'
+    implementation 'org.seleniumhq.selenium:selenium-remote-driver:4.27.0'
+    implementation 'org.slf4j:slf4j-api:2.0.9'
+    implementation 'org.slf4j:slf4j-simple:2.0.9'
     //https://bonigarcia.dev/webdrivermanager/
     //https://github.com/bonigarcia/webdrivermanager
     implementation ('io.github.bonigarcia:webdrivermanager:5.9.2') {
