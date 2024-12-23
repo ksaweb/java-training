@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd">
+<suite name="Test Suite">
+    <test name="TestClassOne">
+        <classes>
+            <class name="example.TestClassOne"/>
+        </classes>
+    </test>
+
+    <test name="TestClassTwo">
+        <parameter name="param1" value="value1"/>
+        <classes>
+            <class name="example.TestClassTwo"/>
+        </classes>
+    </test>
+
+    <test name="TestClassThree">
+        <classes>
+            <class name="example.TestClassThree"/>
+        </classes>
+    </test>
+</suite>
