@@ -40,7 +40,7 @@ public class WireMockTest {
     @Test
     public void test() throws IOException {
         System.out.println(wireMockServer.port());
-        URL url = new URL("http://localhost:" + wireMockServer.port() + "/search?q=wiremock");
+        URL url = new URL("http://localhost:8080/search?q=wiremock"); // + wireMockServer.port() + "/search?q=wiremock");
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
         Assert.assertEquals(connection.getResponseCode(), 200);

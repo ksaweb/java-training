@@ -1,0 +1,14 @@
+{
+  "id": "04b5cdbd-58ef-4553-a9ff-16bb14754b72",
+  "request": {
+    "method": "GET",
+    "urlPattern": "/search\\?q=wiremock"
+  },
+  "response": {
+    "status": 200,
+    "body": "{ \"message\": \"WireMock search successful!\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
